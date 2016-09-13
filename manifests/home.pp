@@ -1,6 +1,8 @@
 # Create a home fir for the user elmo "/tmp/elmo"
-class home {
-  user { 'elmo':
-    home => '/tmp/elmo',
+class users::home {
+  file { '/tmp/elmo':
+    ensure => directory,
+    owner  => 'elmo',
+    group  => 'muppet',
   }
 }
