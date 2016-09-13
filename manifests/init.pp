@@ -1,9 +1,11 @@
 # This is a class that creates a user and a group
 class users {
+  include users::home
+  
   user { 'elmo':
     ensure     => 'present',
     gid        => 'muppet',
-    managehome => true,
+    home       => '/tmp/elmo'
   }
 
   group { 'muppet':
