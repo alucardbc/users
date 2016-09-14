@@ -1,14 +1,13 @@
 # This is a class that creates a user and a group
 class users {
-  include users::home
+  #include users::home
   
-  user { 'elmo':
+  user { 'ddewey':
     ensure     => 'present',
-    gid        => 'muppet',
-    home       => '/tmp/elmo'
+    managehome => true,
   }
 
-  group { 'muppet':
-    ensure => 'present',
-  }
+  #group { 'muppet':
+  #  ensure => 'present',
+  #}
 }
